@@ -3,6 +3,8 @@ import path from 'path';
 import helmet from 'fastify-helmet';
 import dbDecorator from './decorators/dbDecorator.js';
 
+// TODO add Pino.js logger https://github.com/lrlna/pino-colada/
+
 const { DB_URI: dbUri } = process.env;
 
 function App(fastify, dirname) {
