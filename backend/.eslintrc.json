@@ -4,7 +4,8 @@
   "rules": {
     "prettier/prettier": ["error"],
     "no-unused-vars": 0,
-    "import/extensions": false
+    "import/extensions": 0,
+    "import/prefer-default-export": 0
   },
   "parserOptions": {
     "ecmaVersion": 2020,

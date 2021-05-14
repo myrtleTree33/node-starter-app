@@ -1,5 +1,6 @@
 async function routes(fastify, opts) {
-  fastify.post('/', async (request, reply) => ({ hello: 'world' }));
+  fastify.post('/', async (request, reply) => {
+  });
 }
 
 export default routes;

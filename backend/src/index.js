@@ -1,6 +1,5 @@
 import Fastify from 'fastify';
 import makePromisesSafe from 'make-promises-safe';
-import autoload from 'fastify-autoload';
 import path from 'path';
 import App from './app.js';
 
