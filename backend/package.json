@@ -5,11 +5,15 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "start": "node --require dotenv/config  src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"**/*.+(js|mjsjsx|json|css|md)\""
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": ">=14.16.0"
+  },
   "devDependencies": {
     "eslint": "^7.26.0",
     "eslint-config-airbnb": "^18.2.1",
@@ -30,8 +34,11 @@
     "fastify": "^3.15.1",
     "fastify-autoload": "^3.7.1",
     "fastify-helmet": "^5.3.1",
+    "fastify-pagination": "^0.1.2",
     "fastify-plugin": "^3.0.0",
+    "http-errors": "^1.8.0",
     "make-promises-safe": "^5.1.0",
-    "mongoose": "^5.12.9"
+    "mongoose": "^5.12.9",
+    "uuid": "^8.3.2"
   }
 }

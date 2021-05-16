@@ -1,9 +1,18 @@
-import { addProduct } from '../../services/productService.js';
+import HttpErrors from 'http-errors';
+import { findProduct } from '../../services/productService.js';
 
 async function routes(fastify, opts) {
-  fastify.get('/', async (request, reply) => {
-    const order = await addProduct();
-    return Promise.resolve(order);
+  fastify.get('/:id', async (request, reply) => {
+    const { id } = request.params;
+
+    if (!id) {
+      return Promise.resolve(
+        HttpErrors.BadRequest('Please specify an id'),
+      );
+    }
+
+    const product = await findProduct(id);
+    return Promise.resolve(product);
   });
 }
 
