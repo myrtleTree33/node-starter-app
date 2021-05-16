@@ -2,6 +2,7 @@ import Fastify from 'fastify';
 import makePromisesSafe from 'make-promises-safe';
 import path from 'path';
 import App from './app.js';
+import log from './log.js';
 
 // Allow core-dump on uncaught Promise.rejects
 makePromisesSafe.abort = true;
@@ -12,7 +13,7 @@ const __dirname = `/${path
   .dirname(import.meta.url)
   .replace(/^file:\/\/\//, '')}`;
 
-const fastify = Fastify({ logger: true });
+const fastify = Fastify({ logger: log });
 App(fastify, __dirname);
 
 // Run the server!
