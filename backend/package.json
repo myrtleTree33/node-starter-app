@@ -1,16 +1,16 @@
 {
-  "name": "backend",
+  "name": "sample-shop-backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Sample shop backend written in NodeJS / Fastify",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
     "start": "node --require dotenv/config  src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"**/*.+(js|mjsjsx|json|css|md)\""
   },
-  "author": "",
-  "license": "ISC",
+  "author": "myrtletree33",
+  "license": "MIT",
   "engines": {
     "node": ">=14.16.0"
   },
