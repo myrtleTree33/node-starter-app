@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node --require dotenv/config  src/index.js",
-    "test": "jest",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "test:watch": "npm run test -- --watch",
     "format": "prettier --write \"**/*.+(js|mjsjsx|json|css|md)\""
   },
   "author": "myrtletree33",
