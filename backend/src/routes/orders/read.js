@@ -1,8 +1,9 @@
-import { addOrder } from '../../services/orderService.js';
+import { findOrder } from '../../services/orderService.js';
 
 async function routes(fastify, opts) {
-  fastify.get('/', async (request, reply) => {
-    const order = await addOrder();
+  fastify.get('/:id', async (request, reply) => {
+    const { id } = request.params;
+    const order = await findOrder(id);
     return Promise.resolve(order);
   });
 }

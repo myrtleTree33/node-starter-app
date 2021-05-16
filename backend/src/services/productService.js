@@ -25,6 +25,22 @@ export const removeProduct = async (id) => {
   return Promise.resolve(product);
 };
 
+export const incrementProductInventory = async (id, amount) => {
+  console.log('--------------------');
+  console.log(amount);
+  console.log('--------------------');
+
+  const product = await Product.findOneAndUpdate(
+    { _id: id, dateDeleted: null },
+    { $inc: { numRemaining: amount } }, // Increment by the specified amount
+    { upsert: false, useFindAndModify: false, new: true },
+  );
+  return Promise.resolve(product);
+};
+
+export const decrementProductInventory = async (id, amount) =>
+  incrementProductInventory(id, amount * -1);
+
 export const findProduct = async (id) => {
   const product = await Product.findOne({
     _id: id,
