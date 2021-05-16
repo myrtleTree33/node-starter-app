@@ -26,10 +26,6 @@ export const removeProduct = async (id) => {
 };
 
 export const incrementProductInventory = async (id, amount) => {
-  console.log('--------------------');
-  console.log(amount);
-  console.log('--------------------');
-
   const product = await Product.findOneAndUpdate(
     { _id: id, dateDeleted: null },
     { $inc: { numRemaining: amount } }, // Increment by the specified amount
